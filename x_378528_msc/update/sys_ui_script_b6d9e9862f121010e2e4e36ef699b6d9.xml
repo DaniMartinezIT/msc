@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_script">
+    <sys_ui_script action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <description/>
+        <global>false</global>
+        <name>x_378528_msc.angular_msc_client_logic</name>
+        <script><![CDATA[angular.module('angularapp',[]);
+angular.module('angularapp').controller('AngularAppCtrl',function($scope){
+	
+	var agentgroup = [];
+	var ecc_sysid;
+	var ecc_sequence;
+	var timeout=5;
+	var response_sysid;
+	
+	$scope.log ="Iniciando <br>";
+
+
+	
+	$scope.execute = function(){
+
+// Actualizando mid server script file
+		var grAgentscriptfile = new GlideRecord('ecc_agent_script_file');
+		//grAgentscriptfile.addQuery('sys_id','3e473c1a2f1a1010e2e4e36ef699b6f6');
+		grAgentscriptfile.addQuery('name','commander.bat');
+		grAgentscriptfile.query();
+		grAgentscriptfile.next();
+		grAgentscriptfile.setValue('script', $scope.command);
+		$scope.log =$scope.log + 'Script file actualizado';
+		
+		grAgentscriptfile.update();
+
+// 		grAgentscriptfile.insert();
+
+// aquí deberíamos de esperar por el ecc_queue con name=ecc_agent_script_file		
+		
+// creando ecc		
+		$scope.log =$scope.log + "Creando GR en ECC \n ";
+		var grEcc = new GlideRecord('ecc_queue');
+		grEcc.initialize();
+		// grEcc.agent= $scope.agent;
+		grEcc.agent= 'mid.server.mid_win';
+		grEcc.topic = 'Command';
+		grEcc.name='scripts\\commander.bat';
+		grEcc.state='ready';
+		grEcc.queue='output';
+		grEcc.payload='<?xml version="1.0" encoding="UTF-8"?><parameters><parameter name="skip_sensor" value="true"/></parameters>';
+		ecc_sysid = grEcc.insert();
+		$scope.log =$scope.log + "Sys Id de ECC: "+ ecc_sysid + "/n";
+
+// Evaluar si usar secuencia o response_to		
+// 	// buscando la secuencia
+// 	var grECC2 = new GlideRecord('ecc_queue');
+// 	grECC2.addQuery('sys_id',ecc_sysid);
+// 	grECC2.query();
+// 	$scope.log =$scope.log + "Buscando la secuencia:\n";
+// 	if(grECC2.next())
+// 		$scope.sequence=grECC2.sequence;
+// 		$scope.log =$scope.log + grECC2.sequence;
+
+	$scope.sysid=ecc_sysid;
+
+	
+	};	
+
+	$scope.search = function(){
+		
+	$scope.log =$scope.log + "Buscando el resultado:\n";
+	var resp = new GlideRecord("ecc_queue");
+	resp.addQuery("response_to", ecc_sysid);
+	resp.addQuery("queue", "input");
+	resp.query();
+    if (resp.next()) {
+		response_sysid = resp.sys_id;
+	} else {
+		response_sysid = false;
+	}
+	if (response_sysid) {
+		// Parsear nodo stdoud
+		$scope.log =$scope.log + "Encontrado:\n";
+		$scope.result=resp.payload;
+		if (window.DOMParser) {
+			parser = new DOMParser();
+			xmlDoc = parser.parseFromString(resp.payload, "text/xml");
+		} else // Internet Explorer
+		{
+			xmlDoc = new ActiveXObject("Microsoft.XMLDOM");
+			xmlDoc.async = false;
+			xmlDoc.loadXML(resp.payload);
+		}
+		$scope.result=xmlDoc.getElementsByTagName("stdout")[0].childNodes[0].nodeValue;
+	} else {
+		$scope.result="Respuesta no recibida aun";
+	}
+
+	};
+});
+]]></script>
+        <script_name>angular_msc_client_logic</script_name>
+        <sys_class_name>sys_ui_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-07-30 16:29:33</sys_created_on>
+        <sys_id>b6d9e9862f121010e2e4e36ef699b6d9</sys_id>
+        <sys_mod_count>59</sys_mod_count>
+        <sys_name>x_378528_msc.angular_msc_client_logic</sys_name>
+        <sys_package display_value="Mid server commander" source="x_378528_msc">89f569822f121010e2e4e36ef699b669</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Mid server commander">89f569822f121010e2e4e36ef699b669</sys_scope>
+        <sys_update_name>sys_ui_script_b6d9e9862f121010e2e4e36ef699b6d9</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-08-07 12:56:54</sys_updated_on>
+        <ui_type>0</ui_type>
+        <use_scoped_format>false</use_scoped_format>
+    </sys_ui_script>
+</record_update>

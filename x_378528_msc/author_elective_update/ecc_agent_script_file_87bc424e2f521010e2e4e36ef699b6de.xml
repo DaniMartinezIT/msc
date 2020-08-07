@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="ecc_agent_script_file">
+    <ecc_agent_script_file action="DELETE">
+        <active>true</active>
+        <checksum/>
+        <description/>
+        <directory>false</directory>
+        <name>commander.bat</name>
+        <parent/>
+        <script>dir C:\</script>
+        <script_attachment/>
+        <source/>
+        <sys_class_name>ecc_agent_script_file</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-07-30 18:53:36</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>87bc424e2f521010e2e4e36ef699b6de</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>commander.bat</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Mid server commander" source="x_378528_msc">89f569822f121010e2e4e36ef699b669</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Mid server commander">89f569822f121010e2e4e36ef699b669</sys_scope>
+        <sys_update_name>ecc_agent_script_file_87bc424e2f521010e2e4e36ef699b6de</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-07-30 18:53:36</sys_updated_on>
+        <use_attachment>false</use_attachment>
+        <version/>
+    </ecc_agent_script_file>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Mid server commander">89f569822f121010e2e4e36ef699b669</application>
+        <file_path/>
+        <instance_id>9a1aee25dbf213406578f22ebf9619f4</instance_id>
+        <instance_name>dev61792</instance_name>
+        <name>ecc_agent_script_file_87bc424e2f521010e2e4e36ef699b6de</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="ecc_agent_script_file"><ecc_agent_script_file action="INSERT_OR_UPDATE"><active>true</active><checksum/><description/><directory>false</directory><name>commander.bat</name><parent/><script>dir C:\</script><script_attachment/><source/><sys_class_name>ecc_agent_script_file</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2020-07-30 18:53:36</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>87bc424e2f521010e2e4e36ef699b6de</sys_id><sys_mod_count>0</sys_mod_count><sys_name>commander.bat</sys_name><sys_overrides/><sys_package display_value="Mid server commander" source="x_378528_msc">89f569822f121010e2e4e36ef699b669</sys_package><sys_policy/><sys_scope display_value="Mid server commander">89f569822f121010e2e4e36ef699b669</sys_scope><sys_update_name>ecc_agent_script_file_87bc424e2f521010e2e4e36ef699b6de</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2020-07-30 18:53:36</sys_updated_on><use_attachment>false</use_attachment><version/></ecc_agent_script_file></record_update>]]></payload>
+        <payload_hash>-1125424408</payload_hash>
+        <record_name>commander.bat</record_name>
+        <reverted_from/>
+        <source>0df569822f121010e2e4e36ef699b66b</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-07-30 18:53:36</sys_created_on>
+        <sys_id>8fbc864e2f521010e2e4e36ef699b6d4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>173a112965e0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-07-30 18:53:36</sys_updated_on>
+        <type>MID Server Script File</type>
+        <update_guid>c7bc864e1152101097a2df70090b12d4</update_guid>
+        <update_guid_history>c7bc864e1152101097a2df70090b12d4:-1125424408</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="commander.bat">594e0a8e2f521010e2e4e36ef699b608</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-07-30 19:00:19</sys_created_on>
+        <sys_db_object display_value="" name="ecc_agent_script_file">ecc_agent_script_file</sys_db_object>
+        <sys_id>557cecb71a6749bfb9a20a69c372aee9</sys_id>
+        <sys_metadata>87bc424e2f521010e2e4e36ef699b6de</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>commander.bat</sys_name>
+        <sys_package display_value="Mid server commander" source="x_378528_msc">89f569822f121010e2e4e36ef699b669</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Mid server commander">89f569822f121010e2e4e36ef699b669</sys_scope>
+        <sys_scope_delete display_value="">0501fb02bbb244ce835dfa0918a1ff04</sys_scope_delete>
+        <sys_update_name>ecc_agent_script_file_87bc424e2f521010e2e4e36ef699b6de</sys_update_name>
+        <sys_update_version display_value="ecc_agent_script_file_87bc424e2f521010e2e4e36ef699b6de">8fbc864e2f521010e2e4e36ef699b6d4</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-07-30 19:00:19</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_page">
+    <sys_ui_page action="INSERT_OR_UPDATE">
+        <category>general</category>
+        <client_script/>
+        <description/>
+        <direct>false</direct>
+        <endpoint>x_378528_msc_Commander.do</endpoint>
+        <html><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+	<script src="x_378528_msc.angular_msc_client_logic.jsdbx"></script>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"></link>	
+
+	
+	
+	
+<div ng-app="angularapp" ng-controller="AngularAppCtrl as appctrl">
+	<input type="text" ng-model="command" placeholder="Command"></input>
+	<input type="text" ng-model="agent" placeholder="agent"></input>
+	<input type="text" ng-model="sysid" placeholder="sysid"></input>
+	<button ng-click="execute()" type="button" class="btn btn-primary">Execute</button>
+	<button ng-click="search()" type="button" class="btn btn-primary">Search Result</button>
+
+	
+
+<div class="panel panel-default">
+  <div class="panel-body">{{result}}</div>
+  <div class="panel-footer">{{log}}</div>
+</div>
+
+
+
+
+
+</div>
+</j:jelly>]]></html>
+        <name>Commander</name>
+        <processing_script/>
+        <sys_class_name>sys_ui_page</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-07-30 16:15:31</sys_created_on>
+        <sys_id>59b7a5462f121010e2e4e36ef699b6b1</sys_id>
+        <sys_mod_count>26</sys_mod_count>
+        <sys_name>Commander</sys_name>
+        <sys_package display_value="Mid server commander" source="x_378528_msc">89f569822f121010e2e4e36ef699b669</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Mid server commander">89f569822f121010e2e4e36ef699b669</sys_scope>
+        <sys_update_name>sys_ui_page_59b7a5462f121010e2e4e36ef699b6b1</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-08-05 15:47:23</sys_updated_on>
+    </sys_ui_page>
+</record_update>
